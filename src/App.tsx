@@ -1,6 +1,9 @@
-import { AddNewItem } from './AddNewItem';
-import { Column } from './Column';
+import React from 'react';
+
 import { AppContainer } from './styles';
+import { CustomDragLayer } from './CustomDragLayer';
+import { Column } from './Column';
+import { AddNewItem } from './AddNewItem';
 import { useAppState } from './state/AppStateContext';
 import { addList } from './state/actions';
 
@@ -9,6 +12,7 @@ export const App = () => {
 
   return (
     <AppContainer>
+      <CustomDragLayer />
       {lists.map((list) => (
         <Column text={list.text} key={list.id} id={list.id} />
       ))}
